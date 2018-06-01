@@ -1,4 +1,4 @@
-# kortov
+# cordova
 
 ## 環境
 cordova 8.0.0  
