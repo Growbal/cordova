@@ -1,0 +1,202 @@
+html {
+	height: 100%;
+}
+
+body {
+  /* iosの長押し無効 */
+   -webkit-touch-callout: none;
+   /* 文字サイズの自動調整 */
+   -webkit-text-size-adjust: none;
+   /* 文字の選択不可 */
+   -webkit-user-select: none;
+
+   height: 100%;
+
+   background-color: #ffffff;
+
+  /* フォント指定 */
+  /*font-family: "";*/
+}
+
+/* コンテナ */
+.container { 
+	height: 100%;
+    /* 要素に対してグリッドコンテナを指定 */
+    display: grid;
+    /* 行を指定 */
+    grid-template-columns: 1fr 1fr;
+    /* 行と列の間隔を指定 */
+    grid-template-rows:0.25fr 2fr 1fr 1fr;
+    grid-template-areas:
+         "areaA areaA"
+         "areaB areaB"
+         "areaC areaD"
+         "areaE areaF";
+}
+
+/*ヘッダー*/
+.header {
+   grid-area: areaA;
+
+   height: 100%;
+
+   background-color: #23d100;
+
+   font-weight: 800;
+
+   border-bottom: medium solid #e0e0e0;
+
+   font-size: 6vw;
+   color: #ffffff;
+   
+   text-align: left;
+
+   padding-left: 2%;
+}
+
+/* 残高 */
+.balance {
+   grid-area: areaB;
+
+   background-color: #008BD1;
+   
+   color: #ffffff;
+
+   width: 96%;
+   height: 70%;
+   margin-top: 13%;
+   margin-left: 2%;
+
+   /* 要素に対してグリッドコンテナを指定 */
+   display: grid;
+   /* 行と列の間隔を指定 */
+   grid-template-columns: 60% 40%;
+   grid-template-rows: 50% 50%;
+
+   border: none;
+   /* 影 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+
+   /* 角を丸く */
+   /*safari, chorome用*/
+   -webkit-border-radius: 15px;
+}
+
+/*残高イメージ*/
+#balance_img {
+   grid-column: 1;
+   grid-row: 1;
+   padding-top: 22%;
+   padding-left: 10%;
+}
+
+/*ユーザ名表示*/
+#user_name {
+   grid-column: 2;
+   grid-row: 1;
+   font-size: 5vw;
+   color: #ffffff;
+   
+   text-align: center;
+   padding-top: 47%;
+}
+
+
+/* 残高の数値 */
+#coin {
+   grid-column: 1;
+   grid-row: 2;
+
+   text-align: right;
+   font-size: 14vw;
+}
+
+/*通貨単位*/
+#unit {
+   grid-column: 2;
+   grid-row: 2;
+
+   text-align: left;
+   padding-top: 10%;
+
+   font-size: 10vw;
+}
+
+/* 送金 */
+.send_coin { 
+   grid-area: areaC;
+}
+
+/* 取引 */
+.transaction { 
+   grid-area: areaD; 
+} 
+
+/* 設定 */
+.setting { 
+   grid-area: areaE;
+}
+
+/* 通知 */
+.notification { 
+   grid-area: areaF; 
+} 
+
+/* 遷移ボタン */
+#soukin, #torihiki, #settei, #tuuti{
+   background-color: #f3f3f3;
+
+   font-size: 5vw;
+
+   width: 92%;
+   height: 92%;
+   margin-top: 2%
+   margin-bottom: 2%;
+   margin-left: 4%;
+   margin-right: 4%;
+
+   border: none;
+
+   /* 影 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+
+   /* 角を丸く */
+   -webkit-border-radius: 15px;
+
+   /* フォント指定 */
+   /*font-family: "";*/
+}
+
+/*基本は余白なし*/
+* { 
+   margin: 0px; 
+   padding: 0px; 
+}
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+         background-position:left center;
+         padding:75px 0px 75px 170px;   /* padding-top + padding-bottom + text area = image height */
+         margin:-90px 0px 0px -198px;   /* offset vertical: half of image height */
+                                       /* offset horizontal: half of image width and text area width */
+    }
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
