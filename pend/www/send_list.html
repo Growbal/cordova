@@ -9,28 +9,45 @@
             <title>送金画面</title>
     </head>
     <body>
-        <h1>ユーザー検索</h1>
-        <div class="search">
-            <input type="text" id="word" placeholder="検索したいこと？">
-            <input type="button" value="検索" style="width:50px; height:33px" onclick="alert('まだ未実装');">
+        <div class="container">
+
+            <div id="header">
+                ユーザー検索
+            </div>
+
+            <div class="search">
+                <input type="text" id="search_word" placeholder="相手の名前を入力">
+                <input type="button"id="search_btn" value="検索">
+            </div>
+
+            <div class="view">
+                <div class="result">
+                    <p class="result_name" id="userA">ユーザー名１</p>
+                    <button type="button" class="result_btn">選択</button>
+                </div>
+                <div class="result">
+                    <p class="result_name" id="userB">ユーザー名2</p>
+                    <button type="button" class="result_btn">選択</button>
+                </div>
+                <div class="result">
+                    <p class="result_name" id="userC">ユーザー名3</p>
+                    <button type="button" class="result_btn">選択</button>
+                </div>
+                <div class="result">
+                    <p class="result_name" id="userD">ユーザー名4</p>
+                    <button type="button" class="result_btn">選択</button>
+                </div>
+                <div class="result">
+                    <p class="result_name" id="userE">ユーザー名5</p>
+                    <button type="button" class="result_btn">選択</button>
+                </div>
+                <div class="result">
+                    <p class="result_name" id="userF">ユーザー名6</p>
+                    <button type="button" class="result_btn">選択</button>
+                </div>
+            </div>
+
         </div>
-
-        <div class="null"></div>
-
-        <div class="view">
-            <h2>下が検索結果です。</h2>
-            <p class="button">test1</p><br>
-            <p class="button">test2</p><br>
-            <p class="button">test3</p><br>
-            <p class="button">test4</p><br>
-            <p class="button">test5</p><br>
-            <p class="button">test6</p><br>
-            <p class="button">test7</p><br>
-            <p class="button">test8</p><br>
-            <p class="button">test9</p><br>
-            <p class="button">test10</p><br>
-        </div>
-
         <!-- jsへのリンク -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/send_list.js"></script>

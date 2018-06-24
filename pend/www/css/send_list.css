@@ -1,74 +1,147 @@
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    margin:0px;
+    padding:0px;
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:white;
-    background-image:linear-gradient(top, white 0%, white 100%);
-    background-image:-webkit-linear-gradient(top, white 0%, white 100%);
-    background-image:-ms-linear-gradient(top, white 0%, white 100%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, white),
-        color-stop(0.51, white)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:98Vh;
-    margin:3px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+  /* iosの長押し無効 */
+  -webkit-touch-callout: none;
+  /* 文字サイズの自動調整 */
+  -webkit-text-size-adjust: none;
+  /* 文字の選択不可 */
+  -webkit-user-select: none;
+  background-color: #ffffff;
+
+  height:100Vh;
+  width:100%;
 }
-p{
-  font-size: 24px;
+
+.container { 
+  height: 100%;
+  /* 要素に対してグリッドコンテナを指定 */
+  display: grid;
+  /* 行を指定 */
+  /*grid-template-columns: 1fr 1fr;*/
+  /* 行と列の間隔を指定 */
+  grid-template-rows:6% 14% 80%;
+  grid-template-areas:
+       "areaA"
+       "areaB"
+       "areaC";
+}
+
+/*ヘッダー*/
+#header{
+  grid-area: areaA;
+
+  height: 100%;
+  background-color: #23d100;
+  font-size: 6vw;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: left;
+  padding-left: 2%;
+  border-bottom: medium solid #e0e0e0;
+}
+
+.search {
+  grid-area: areaB;
+
+  height: 100%;
+  width: 100%;
+  padding-top: 5%
+}
+
+/*検索欄*/
+#search_word {
+  background-color: #f3f3f3;
+  font-size: 5vw;
+  width: 70%;
+  height: 12%;
+  text-align: left;
   border: none;
-  border-top: 1px solid blue;
-  border-bottom: 1px solid blue;
-}
-.button{
-    position: relative;
-    display: inline-block;
-    padding: 0.25em 0.5em;
-    text-decoration: none;
-    color: #FFF;
-    background: #fd9535;/*色*/
-    border-radius: 4px;/*角の丸み*/
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-    font-weight: bold;
-    border: solid 2px #d27d00;/*線色*/
+  border-radius: 7px;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+  margin-left: 2%;
+  padding:3%;
 }
 
-.button:active {/*押したとき*/
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
-}
-.search{
-    height: 20%;
-    text-align: center;
+/*検索ボタン*/
+#search_btn {
+  border-radius: 15px;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+  height: 50%;
+  width: 20%;
+
+  background: #008bd1;
+  color: #ffffff;
+  border:none;
+  font-size: 5vw;
+  padding:2%;
 }
 
+/*検索結果*/
 .view{
-    height: 40%;
-    overflow:scroll;
-    border: red 1px dashed;
-    width: 60%;
-    text-align: center;
-    padding-top: 1%;
-    border: 1px solid black;
-    background-color: aliceblue;
-    display: inline-block;
-    align-content: space-around;
+  grid-area: areaC;
+
+  height: 100%;
+  width: 100%;
+  /*margin-left: 7.5%;*/
+
+  overflow:scroll;
+
+  text-align: center;
+
+  background-color: #ffffff;
+
+/*  align-content: space-around;
+  border:none;
+
+  border-radius: 15px;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);*/
 }
 
-.null{
-    height: 70%;
-    width: 20%;
-    /* border: 1px solid blue; */
-    float: left;
+.result {
+  width: 96%;
+  margin-bottom: 15%;
+  margin-top: 3%;
+  margin-left: 2%;
+  background: #f3f3f3;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.result_name {
+  font-size: 8vw;
+  position: relative;
+  display: inline-block;
+  padding: 3% 5%;
+  text-decoration: none;
+  align-content: space-around;
+  /*background: #ffffff;*/
+  background: #f3f3f3;
+  border-radius: 15px;
+
+  font-weight: bold;
+
+  border:none;
+}
+
+/*検索結果表示+ボタン*/
+.result_btn{
+  font-size: 7vw;
+  position: relative;
+  display: inline-block;
+  padding: 3% 5%;
+  margin: 2%;
+
+  text-decoration: none;
+  align-content: space-around;
+
+  /*background-color: #008bd1;*/
+  background-color: #f3f3f3;
+
+  color: #23d100;
+  font-weight: bold;
+
+  border:none;
 }
