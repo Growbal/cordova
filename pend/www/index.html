@@ -17,53 +17,43 @@
 	</head>
 	<body>
 
-		<!-- コンテナ -->
-		<div class="container">
+		<!-- メニュー表示 -->
+		<div class= "header">
+			pen-D
+		</div>
 
-			<!-- メニュー表示 -->
-			<div class= "header">
-				pen-D
-			</div>
+		<!-- 残高表示 -->
+		<div class="balance">
+			<img src="img/balance.png" id= "balance_img">
+			<p id= "user_name">ユーザー名</p>
+			<p id= "coin">1000000</p>
+			<p id="unit">&nbsp;pen-D</p>
+		</div>
 
-			<!-- 残高表示 -->
-			<div class="balance">
-				<img src="img/balance.png" id= "balance_img">
-				<p id= "user_name">ユーザー名</p>
-				<p id= "coin">1000000</p>
-				<p id="unit">&nbsp;pen-D</p>
-			</div>
-
+		<div class="btn_block">
 			<!-- 送金 --> 
-			<div class="send_coin">
-				<button type="button" id="soukin">
-					<img src="img/coin2.png"><br>
-					送金
-				</button>
-			</div>
+			<button type="button" id="send_coin">
+				<img src="img/coin2.png"><br>
+				送金
+			</button>
 
 			<!-- 取引履歴 -->
-			<div class="transaction">
-				<button type="button" id="torihiki">
-					<img src="img/transaction.png"><br>
-					取引履歴
-				</button>
-			</div>
+			<button type="button" id="transaction">
+				<img src="img/transaction.png"><br>
+				取引履歴
+			</button>
 
 			<!-- 設定 --> 
-			<div class="setting">
-				<button type="button" id="settei">
-					<img src="img/setting.png"><br>
-					設定
-				</button>
-			</div>
+			<button type="button" id="setting">
+				<img src="img/setting.png"><br>
+				設定
+			</button>
 
-			<!-- 通知 --> 
-			<div class="notification">
-				<button type="button" id="tuuti">
-					<img src="img/notification.png"><br>
-					通知
-				</button>
-			</div>
+			<!-- お知らせ --> 
+			<button type="button" id="notification">
+				<img src="img/notification.png"><br>
+				お知らせ
+			</button>
 
 		</div>
 

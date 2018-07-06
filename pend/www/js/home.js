@@ -1,39 +1,35 @@
 // html内の要素を読み込む
-var soukinBtn = document.querySelector("#soukin");
-var torihikiBtn = document.querySelector("#torihiki");
-var setteiBtn = document.querySelector("#settei");
-var tuutiBtn = document.querySelector("#tuuti");
-
-// 数値
-var coinNum = document.querySelector("#coin")
+var sendCoinBtn = document.querySelector("#send_coin");
+var transactionBtn = document.querySelector("#transaction");
+var settingBtn = document.querySelector("#setting");
+var notificationBtn = document.querySelector("#notification");
 
 // ボタンが押されたときに関数を実行する
-soukinBtn.onclick = function(){
+sendCoinBtn.onclick = function(){
 	GoLink(1);
 }
-torihikiBtn.onclick = function(){
+transactionBtn.onclick = function(){
 	GoLink(2);
 }
- //テストで、innerHTMlで数値をいじるようにする
-setteiBtn.onclick = function(){
-	coinNum.innerHTML  = "1000000"
+settingBtn.onclick = function(){
+	GoLink(3);
 }
-tuutiBtn.onclick = function(){
-	coinNum.innerHTML  = "0"
+notificationBtn.onclick = function(){
+	GoLink(4);
 }
 
 // 数字に対応したページへ移動する関数
-function GoLink(no){
-	if(no == 1){
+function GoLink(num){
+	if(num == 1){
 		href = "./send_list.html";
-	}else if(no == 2){
-		href = "./send_coin.html";
-	}else if(no == 3){
-		href = "./send_coin.html";
-	}else if(no == 4){
-		href = "./send_coin.html";
+	}else if(num == 2){
+		href = "./not_found.html";
+	}else if(num == 3){
+		href = "./not_found.html";
+	}else if(num == 4){
+		href = "./not_found.html";
 	}else{
-		href = "./send_coin.html";
+		href = "./not_found.html";
 	}
  	location.href = href;
 }
