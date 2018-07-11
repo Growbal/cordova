@@ -19,26 +19,12 @@ body {
 }
 
 /* コンテナ */
-.containerX { 
-	height: 100%;
-    /* 要素に対してグリッドコンテナを指定 */
-    display: grid;
-    /* 行を指定 */
-    grid-template-columns: 1fr 1fr;
-    /* 行と列の間隔を指定 */
-    grid-template-rows: 0.25fr 1fr 1fr 2fr;
-    grid-template-areas:
-         "areaA areaA"
-         "areaB areaB"
-         "areaC areaC"
-         "areaD areaE";
-} 
+
 
 /* メニュー表示 */
 header{
-    grid-area: areaA;
 
-    height: 100%;
+    height: 6%;
 
     background-color: #23d100;
 
@@ -56,17 +42,16 @@ header{
 
 /* 送金相手 表示覧*/
 .acount{
-   grid-area: areaB;
 
    background-color: #008BD1;
 
    color: #ffffff;
 
    width: 96%;
-   height: 70%;
+   height: 16%;
    margin-top: 15%;
    margin-left: 2%;
-   
+
    border: none;
 
    border-radius: 15px;
@@ -76,11 +61,8 @@ header{
 
 /* 相手の名前 */
 #acount_name {
-    background-color: #008BD1;
-
-    font-size: 10vw;
-   
-
+   background-color: #008BD1;
+   font-size: 10vw;
    padding: 3%;
    margin: 1%;
    text-align: center;
@@ -88,9 +70,6 @@ header{
 }
 
 /* 金額入力 */
-.input_coin { 
-   grid-area: areaC;
-}
 
 /* テキストボックス */
 #coinbox {
@@ -99,13 +78,12 @@ header{
    font-size: 36px;
 
    width: 95%;
-   height: 80%;
+   height: 20%;
 
    margin-top: 15%;
    margin-left: 2.5%;
 
    text-align: center;
- 
 
    border: none;
 
@@ -114,37 +92,31 @@ header{
    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
-/* 決定 */
-.decision { 
-   grid-area: areaD; 
-} 
-
-/* キャンセル */
-.cancel { 
-   grid-area: areaE;
-}
-
-
 /* ボタン */
-#yes , #no {
+button {
+	 display: inline-block;
    background-color: #f3f3f3;
 
    font-size: 6vw;
 
-   width: 90%;
-   height: 45%;
-
-   margin-top: 40%;
-   margin-left: 5%;
-
+   width: 44%;
+   height: 20%;
    border: none;
 
    border-radius: 15px;
 
-   box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26); 
- 
-}
+   box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
 
+}
+#yes{
+	margin-top: 7.5%;
+	margin-left: 2.5%;
+}
+#no{
+	margin-top: 7.5%;
+	margin-left: 5%;
+	/* margin-right: 2.5%; */
+}
 /* 余白を基本的になしにする */
 *{
     margin: 0px;
@@ -166,13 +138,13 @@ header{
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
