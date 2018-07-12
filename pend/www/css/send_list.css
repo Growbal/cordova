@@ -3,6 +3,10 @@
     padding:0px;
 }
 
+html{
+  height: 100%;
+}
+
 body {
   /* iosの長押し無効 */
   -webkit-touch-callout: none;
@@ -16,25 +20,25 @@ body {
   width:100%;
 }
 
-.container { 
+/* .container {
   height: 100%;
   /* 要素に対してグリッドコンテナを指定 */
-  display: grid;
+  /* display: grid; */
   /* 行を指定 */
   /*grid-template-columns: 1fr 1fr;*/
   /* 行と列の間隔を指定 */
-  grid-template-rows:6% 14% 80%;
+  /* grid-template-rows:6% 14% 80%;
   grid-template-areas:
        "areaA"
        "areaB"
        "areaC";
-}
+} */
 
 /*ヘッダー*/
 #header{
-  grid-area: areaA;
+  /* grid-area: areaA; */
 
-  height: 100%;
+  height: 6%;
   background-color: #23d100;
   font-size: 6vw;
   font-weight: 800;
@@ -45,9 +49,9 @@ body {
 }
 
 .search {
-  grid-area: areaB;
+  /* grid-area: areaB; */
 
-  height: 100%;
+  height: 14%;
   width: 100%;
   padding-top: 5%
 }
@@ -82,9 +86,9 @@ body {
 
 /*検索結果*/
 .view{
-  grid-area: areaC;
+  /* grid-area: areaC; */
 
-  height: 100%;
+  height: 75%;
   width: 100%;
   /*margin-left: 7.5%;*/
 
