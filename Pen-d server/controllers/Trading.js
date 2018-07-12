@@ -24,4 +24,24 @@ function process(req, res, data){
   });
 }
 
+function check(req, res, data){
+  console.log(data);
+  let holder = data.split("&");
+  let name = holder[0].split("=");
+  let total = {};
+
+  let value = 'select * from trading where pay_id = (select user_id from user where name = ?) or receive_id = (select user_id from user where name = ?)';
+  DBTemp.queryAction(value, [decodeURI(name[1]), decodeURI(name[1])], 'trading', (result) => {
+    value = 'select user_id, name from user';
+    total.trade = result;
+    DBTemp.queryAction(value, [], 'trading', (result) => {
+      total.namelist = result;
+      res.writeHead(200, {'Content-Type': 'text/plain; charset=UTF-8'});
+      res.write(JSON.stringify(total));
+      res.end();
+    });
+  });
+}
+
 exports.process = process;
+exports.check = check;

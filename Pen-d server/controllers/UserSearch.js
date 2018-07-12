@@ -8,6 +8,7 @@ function process(req, res, data){
   let holder = data.split("=");
   let target = decodeURI(holder[1]);
   DBTemp.queryAction(value, ["%"+target+"%"], 'name', (result) => {
+    console.log(result);
     res.write(JSON.stringify(result));
     res.end();
   });
