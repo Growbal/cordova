@@ -4,7 +4,7 @@ var app = {
       //deviceready... ネイティブとHTMLのブリッジのために初期化を行う。その初期化で発火するのがこのイベント
       //ちなみにHTMLが読み込んでるときはDOMContentLoadedイベントが発火する
       //その次にload。いつも使ってるやつ。その後にdeviceready
-      document.getElementById("btn").addEventListener('click', this.SearchUser.bind(this), false);
+      document.getElementById("search_btn").addEventListener('click', this.SearchUser.bind(this), false);
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     // deviceready Event Handler
@@ -20,7 +20,7 @@ var app = {
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
       //ここも大事。　DOMどすえ
-      let text = document.getElementById('word').value;
+      let text = document.getElementById('search_word').value;
 
       // ハンドラの登録.
       xhr.onload = function() {
@@ -55,16 +55,19 @@ var app = {
       view.innerHTML = "";
       if(value.length <= 0)view.innerHTML = "該当する名前はありませんｗ"
       for(res of value){
-        view.innerHTML = `
-          <button class="change">${res.name}</button>
+        view.innerHTML += `
+          <div class="result">
+            <p class="result_name" id="userA">${res.name}</p>
+            <button type="button" class="result_btn" value=${res.name}>選択</button>
+          </div>
         `
       }
-      let contents = document.getElementsByClassName('change');
+      let contents = document.getElementsByClassName('result_btn');
       for(i of contents) i.addEventListener('click', (e) => {app.changePage(e)});
     },
 
     changePage: function(e){
-      let target = e.target.innerHTML;
+      let target = e.target.value;
       localStorage.setItem("targetname", target);
       location.href = "./send_coin.html";
     }

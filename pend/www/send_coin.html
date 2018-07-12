@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<!-- セキュリティポリシー -->
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
 		<!-- 英数字列を電話番号やメールアドレスとして認識しない -->
 		<meta name="format-detection" content="telephone=no">
 		<!-- タッチを強調したりする -->
@@ -16,29 +16,24 @@
 		<title>送る金額を決定</title>
 	</head>
 	<body>
+		<header>送金</header>
 
-			<header>送金</header>
-
-			<!-- 送信相手を表示 -->
-			<div class="acount">
-				<p id="acount_name"> 送り相手の名前</p>
-			</div>
-
-			<!-- 金額入力 -->
-				<input type="text" id="coinbox" placeholder="送金額を入力">
-
-			<!-- 決定 -->
-				<button type="button" id="yes">
-					<img src="img/coin.png"><br/>
-					送金
-				</button>
-
-			<!-- キャンセル -->
-				<button type="button" id="no">
-					<img src="img/cancel.png"><br/>
-					キャンセル
-				</button>
-
+		<!-- 送信相手を表示 -->
+		<div class="acount">
+			<p id="acount_name"> 送り相手の名前</p>
+		</div>
+		<!-- 金額入力 -->
+		<input type="text" id="coinbox" placeholder="送金額を入力">
+		<!-- 決定 -->
+		<button type="button" id="yes">
+			<img src="img/coin.png"><br/>
+			送金
+		</button>
+		<!-- キャンセル -->
+		<button type="button" id="no">
+			<img src="img/cancel.png"><br/>
+			キャンセル
+		</button>
 		<!-- jsへのリンク -->
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/send_coin.js"></script>

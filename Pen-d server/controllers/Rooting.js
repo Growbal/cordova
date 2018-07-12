@@ -6,6 +6,7 @@ let Test = require('./Test');
 let BlanceCheck = require('./BlanceCheck');
 let UserSearch = require('./UserSearch');
 let Trading = require('./Trading');
+let Login = require('./Login');
 
 //ルーティングテーブル、 switchでする必要ある？
 function CheckEndPoint(req, res){
@@ -20,12 +21,20 @@ function CheckEndPoint(req, res){
       BlanceCheck.process(req, res, UrlData.query);
       break;
 
+    case '/TradingCheck':
+      Trading.check(req, res, UrlData.query);
+      break;
+
     case '/UserSearch':
       UserSearch.process(req, res, UrlData.query);
       break;
 
     case '/Trading':
       Trading.process(req, res, UrlData.query);
+      break;
+
+    case '/Login':
+      Login.process(req, res, UrlData.query);
       break;
   }
 }
