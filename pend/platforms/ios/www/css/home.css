@@ -1,0 +1,119 @@
+html {
+  height: 100%;
+}
+
+/*基本は余白なし*/
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+body {
+  /* iosの長押し無効 */
+   -webkit-touch-callout: none;
+   /* 文字サイズの自動調整 */
+   -webkit-text-size-adjust: none;
+   /* 文字の選択不可 */
+   -webkit-user-select: none;
+
+   height: 100%;
+
+   background-color: #ffffff;
+}
+
+
+/*ヘッダー*/
+.header {
+   height: 6%;
+
+   background-color: #23d100;
+
+   font-size: 6vw;
+   font-weight: 800;
+   color: #ffffff;
+   text-align: left;
+   padding-left: 2%;
+
+   border-bottom: medium solid #e0e0e0;
+}
+
+/* 残高 */
+.balance {
+   background-color: #008BD1;
+
+   color: #ffffff;
+
+   width: 96%;
+   height: 35%;
+   margin-top: 4%;
+   margin-bottom: 2%;
+   margin-left: 2%;
+
+   border: none;
+   /* 影 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+   /* 角を丸く */
+   -webkit-border-radius: 15px;
+}
+
+/*残高イメージ*/
+#balance_img {
+   display: inline-block;
+
+   padding-top: 15%;
+   padding-left: 10%;
+}
+
+/*ユーザ名表示*/
+#user_name {
+   display: inline-block;
+
+   padding-top: 15%;
+   padding-left: 20%;
+   font-size: 5vw;
+   color: #ffffff;
+
+   text-align: center;
+}
+
+/* 残高の数値 */
+#coin {
+   display: inline-block;
+
+   text-align: right;
+   font-size: 14vw;
+}
+
+/*通貨単位*/
+#unit {
+   display: inline-block;
+
+   text-align: left;
+   padding-top: 10%;
+
+   font-size: 10vw;
+}
+
+.btn_block {
+  height: 52%;
+}
+
+/* 遷移ボタン */
+button {
+   display: inline-block;
+
+   background-color: #f3f3f3;
+
+   font-size: 5vw;
+
+   height: 45%;
+   width: 46%;
+   margin-top: 3%;
+   margin-left: 2%;
+
+   border: none;
+   /* 影 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+   /* 角を丸く */
+   -webkit-border-radius: 15px;
+}
