@@ -1,6 +1,7 @@
 var app = {
     // Application Constructor。アプリ起動時に実行する関数かな
     initialize: function() {
+      document.getElementById("user_name").innerHTML = localStorage.getItem('myname');
       document.getElementById("submit").addEventListener('click', this.SendMoney.bind(this), false);
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
@@ -53,6 +54,7 @@ var app = {
         document.getElementById("error").innerHTML = "ユーザー名、またはパスワードが違っています"
         return;
       }
+      localStorage.setItem("myname", data);
       location.href = "./home.html";
     }
 };

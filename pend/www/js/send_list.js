@@ -52,9 +52,11 @@ var app = {
 
     Total: function(value){
       let view = document.getElementById("view");
+      let name = localStorage.getItem('myname');
+
       view.innerHTML = "";
-      if(value.length <= 0)view.innerHTML = "該当する名前はありませんｗ"
       for(res of value){
+        if(name == res.name)continue;
         view.innerHTML += `
           <div class="result">
             <p class="result_name" id="userA">${res.name}</p>
@@ -62,6 +64,7 @@ var app = {
           </div>
         `
       }
+      if(value.length <= 0 || view.innerHTML == "")view.innerHTML = "該当する名前はありませんｗ"
       let contents = document.getElementsByClassName('result_btn');
       for(i of contents) i.addEventListener('click', (e) => {app.changePage(e)});
     },
