@@ -39,6 +39,7 @@ function GoLink(num){
 var app = {
     // Application Constructor。アプリ起動時に実行する関数かな
     initialize: function() {
+			document.getElementById("user_name").innerHTML = localStorage.getItem('myname');
 			this.BalanceCheck();
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
