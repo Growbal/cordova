@@ -53,7 +53,8 @@ var app = {
         document.getElementById("error").innerHTML = "ユーザー名、またはパスワードが違っています"
         return;
       }
-      localStorage.setItem("myname", data[0].name);
+      let username = document.getElementById('username').value;
+      localStorage.setItem("myname", username);
       location.href = "./home.html";
     }
 };
