@@ -56,7 +56,7 @@ var app = {
 
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = "Abe";
+			let name = localStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -68,6 +68,7 @@ var app = {
                       var data = JSON.parse(xhr.response); // responseXML もあり
 											console.log(data);
                       document.getElementById("coin").innerHTML = data[0]["balance"].toLocaleString();
+											localStorage.setItem("balance", data[0]["balance"]);
                   } else {
                     //エラー処理
                       console.log( 'Failed. HttpStatus: '+ xhr.statusText );

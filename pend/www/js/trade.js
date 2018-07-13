@@ -18,7 +18,7 @@ var app = {
 
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = "Abe";
+			let name = localStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -51,7 +51,7 @@ var app = {
     TradingCheck: function(){
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = "Abe";
+			let name = localStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -92,8 +92,8 @@ var app = {
             <div class="left">
             <p class="date">${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}</p>
             </div>
-            <div class="right hiku">
-              <p>-${i.money}</p>
+            <div class="right plus">
+              <p>+${i.money}</p>
             </div>
           </div>
             `;
@@ -104,8 +104,8 @@ var app = {
             <div class="left">
               <p class="date">${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}</p>
             </div>
-            <div class="right plus">
-              <p>+${i.money}</p>
+            <div class="right hiku">
+              <p>-${i.money}</p>
             </div>
           </div>
           `;

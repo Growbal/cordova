@@ -67,7 +67,7 @@ body {
 /*ユーザ名表示*/
 #user_name {
    display: inline-block;
-   width:40%;
+   width: 40%;
    padding-top: 15%;
    padding-left: 20%;
    font-size: 7vw;
