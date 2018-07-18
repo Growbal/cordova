@@ -38,7 +38,7 @@ body {
 #header{
   /* grid-area: areaA; */
 
-  height: 6%;
+  height: 40px;
   background-color: #23d100;
   font-size: 6vw;
   font-weight: 800;
@@ -74,7 +74,7 @@ body {
 #search_btn {
   border-radius: 15px;
   box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
-  height: 50%;
+  height: 40px;
   width: 20%;
 
   background: #008bd1;

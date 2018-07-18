@@ -80,32 +80,34 @@ var app = {
     },
 
     tradevisible: function(data){
-      let name = "Abe";
+      let name = localStorage.getItem('myname');
       let view = document.getElementById("view");
       view.innerHTML = "";
+      let tradelist = data.trade.reverse();
+      console.log(tradelist);
       for(let i of data.trade){
         let date = new Date(i.trading_date);
         if(data.namelist[i.pay_id - 1].name == name){
           view.innerHTML += `
           <div class="send">
-            <p class="aite">受取相手: ${data.namelist[i.receive_id - 1].name}</p>
+            <p class="aite">出金: ${data.namelist[i.receive_id - 1].name}</p>
             <div class="left">
             <p class="date">${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}</p>
             </div>
-            <div class="right plus">
-              <p>+${i.money}</p>
+            <div class="right hiku">
+              <p>-${i.money}</p>
             </div>
           </div>
             `;
         }else{
           view.innerHTML += `
           <div class="receive">
-            <p class="aite">送金相手: ${data.namelist[i.pay_id - 1].name}</p>
+            <p class="aite">入金: ${data.namelist[i.pay_id - 1].name}</p>
             <div class="left">
               <p class="date">${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}</p>
             </div>
-            <div class="right hiku">
-              <p>-${i.money}</p>
+            <div class="right plus">
+              <p>+${i.money}</p>
             </div>
           </div>
           `;

@@ -21,7 +21,10 @@ var app = {
       var xhr = new XMLHttpRequest();
       //ここも大事。　DOMどすえ
       let text = document.getElementById('search_word').value;
-
+      if(text == ""){
+        alert("入力してください");
+        return;
+      }
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ

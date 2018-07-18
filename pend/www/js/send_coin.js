@@ -26,6 +26,10 @@ var app = {
         alert("異常なデータです");
         return;
       }
+      if(!/^\d*$/g.test(text)){
+        alert("数字以外は入力しないでください");
+        return;
+      }
 
       let balance = localStorage.getItem('balance');
       if(parseInt(text) > parseInt(balance)){
