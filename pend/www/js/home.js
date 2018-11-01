@@ -39,7 +39,7 @@ function GoLink(num){
 var app = {
     // Application Constructor。アプリ起動時に実行する関数かな
     initialize: function() {
-			document.getElementById("user_name").innerHTML = localStorage.getItem('myname');
+			document.getElementById("user_name").innerHTML = sessionStorage.getItem('myname');
 			this.BalanceCheck();
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
@@ -56,7 +56,7 @@ var app = {
 
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = localStorage.getItem('myname');
+			let name = sessionStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -67,8 +67,8 @@ var app = {
                       //さっきのwelcomeうほうほは　responseTextの中に入っているッッ!!
                       var data = JSON.parse(xhr.response); // responseXML もあり
 											console.log(data);
-                      document.getElementById("coin").innerHTML = data[0]["balance"].toLocaleString();
-											localStorage.setItem("balance", data[0]["balance"]);
+                      document.getElementById("coin").innerHTML = data[0]["balance"];
+											sessionStorage.setItem("balance", data[0]["balance"]);
                   } else {
                     //エラー処理
                       console.log( 'Failed. HttpStatus: '+ xhr.statusText );

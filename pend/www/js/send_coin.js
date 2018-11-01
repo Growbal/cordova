@@ -1,7 +1,7 @@
 var app = {
     // Application Constructor。アプリ起動時に実行する関数かな
     initialize: function() {
-      document.getElementById("acount_name").innerHTML = localStorage.getItem('targetname');
+      document.getElementById("acount_name").innerHTML = sessionStorage.getItem('targetname');
       document.getElementById("yes").addEventListener('click', this.onBackClickEvent.bind(this), false);
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
@@ -21,8 +21,9 @@ var app = {
     },
 
     onBackClickEvent() {
+      let comment = document.getElementById('commentbox').value;
       let text = document.getElementById('coinbox').value;
-      if(text == "" || text <= 0){
+      if(text == "" || text <= 0 || comment ==""){//commentboxの空白をはじくように追加。
         alert("異常なデータです");
         return;
       }
@@ -31,13 +32,13 @@ var app = {
         return;
       }
 
-      let balance = localStorage.getItem('balance');
+      let balance = sessionStorage.getItem('balance');
       if(parseInt(text) > parseInt(balance)){
         alert("エラー：残高不足");
         return;
       }
       navigator.notification.confirm( //カスタマイズ可能な確認用ダイアログボックスを表示
-        `以下の金額で${localStorage.getItem('targetname')}さんに\n送金しますか？\n\n送金額: ￥${document.getElementById('coinbox').value}`, // メッセージ
+        `以下の金額で${sessionStorage.getItem('targetname')}さんに\n送金しますか？\n\n送金額: ￥${document.getElementById('coinbox').value}`, // メッセージ
         this.confirmCallback, // コールバックは、押されたボタンのインデックスで呼び出す
         "送金確認", // タイトル
         "送金,キャンセル" // ボタンの表示名
@@ -49,12 +50,14 @@ var app = {
       var xhr = new XMLHttpRequest();
       //ここも大事。　DOMどすえ
       let text = document.getElementById('coinbox').value;
+      let comment = document.getElementById('commentbox').value;
+
       if(text == "" || text <= 0){
         alert("異常なデータです");
         return;
       }
 
-      let balance = localStorage.getItem('balance');
+      let balance = sessionStorage.getItem('balance');
       if(parseInt(text) > parseInt(balance)){
         alert("エラー：残高不足");
         return;
@@ -80,7 +83,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/Trading?servecename=${localStorage.getItem('myname')}&targetname=${localStorage.getItem('targetname')}&value=${text}`, false);
+      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/Trading?servecename=${sessionStorage.getItem('myname')}&targetname=${sessionStorage.getItem('targetname')}&value=${text}&comment=${comment}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");

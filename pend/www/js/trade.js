@@ -18,7 +18,7 @@ var app = {
 
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = localStorage.getItem('myname');
+			let name = sessionStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -29,7 +29,7 @@ var app = {
                       //さっきのwelcomeうほうほは　responseTextの中に入っているッッ!!
                       var data = JSON.parse(xhr.response); // responseXML もあり
 											console.log(data);
-                      document.getElementById("coin").innerHTML = data[0]["balance"].toLocaleString();
+                      document.getElementById("coin").innerHTML = data[0]["balance"].tosessioneString();
                   } else {
                     //エラー処理
                       console.log( 'Failed. HttpStatus: '+ xhr.statusText );
@@ -51,7 +51,7 @@ var app = {
     TradingCheck: function(){
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = localStorage.getItem('myname');
+			let name = sessionStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -80,7 +80,7 @@ var app = {
     },
 
     tradevisible: function(data){
-      let name = localStorage.getItem('myname');
+      let name = sessionStorage.getItem('myname');
       let view = document.getElementById("view");
       view.innerHTML = "";
       let tradelist = data.trade.reverse();

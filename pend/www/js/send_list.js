@@ -55,7 +55,7 @@ var app = {
 
     Total: function(value){
       let view = document.getElementById("view");
-      let name = localStorage.getItem('myname');
+      let name = sessionStorage.getItem('myname');
 
       view.innerHTML = "";
       for(res of value){
@@ -74,7 +74,7 @@ var app = {
 
     changePage: function(e){
       let target = e.target.value;
-      localStorage.setItem("targetname", target);
+      sessionStorage.setItem("targetname", target);
       location.href = "./send_coin.html";
     }
 };
