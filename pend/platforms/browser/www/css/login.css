@@ -1,0 +1,85 @@
+body {
+  background-color: #FFF;
+  padding: 0px;
+  margin: 0px;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* ---- コントローラー ----*/
+#controller_container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  background-color: #23d100;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+#file_name {
+  font-size: 5vw;
+  color: white;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+
+.form{
+  margin-top: 20px;
+  color: #586069;
+}
+
+.form input{
+  width: 280px;
+  border: 1px solid #d1d5da;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 4vw;
+  margin-top: 3px;
+}
+
+input:focus{
+  outline: 0;
+  border: 1px solid #fba63e;
+}
+
+.submit{
+  background-color: #00e000;
+  margin-left: 10px;
+  color: white;
+}
+
+.submit:hover{
+  background-color: #00f000;
+}
+
+.login{
+  width: 300px;
+  margin: 80px auto;
+  border: 2px solid;
+  padding: 20px;
+  border-radius: 5px;
+  border-color: #23d100;
+}
+
+.login h1{
+  background-color: #23d100;
+  margin: -20px 0 30px -20px;
+  width: 340px;
+  border-radius: 5px 5px 0 0 ;
+  text-align: center;
+  font-weight: 200;
+  padding: 20px 0 20px 0;
+  color: white;
+}
+
+.login p {
+  text-align: center;
+  color: #586069;
+  font-size: 3.5vw;
+}
+
+hr{
+  margin: 20px 0 20px 0;
+}

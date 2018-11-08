@@ -1,51 +1,167 @@
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+html {
+	height: 100%;
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:98Vh;
-    margin:3px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+  /* iosの長押し無効 */
+   -webkit-touch-callout: none;
+   /* 文字サイズの自動調整 */
+   -webkit-text-size-adjust: none;
+   /* 文字の選択不可 */
+   -webkit-user-select: none;
+
+	height: 100%;
+
+  background-color: #ffffff;
+
+  /* フォント指定 */
+  /*font-family: "";*/
 }
 
-.search{
-    height: 20%;
-    text-align: center;
-    border: 1px solid red;
+/* コンテナ */
+
+
+/* メニュー表示 */
+header{
+
+    height: 40px;
+
+    background-color: #23d100;
+
+    font-weight: 800;
+
+    border-bottom: medium solid #e0e0e0;
+
+    font-size: 6vw;
+    color: #ffffff;
+
+    text-align: left;
+
+    padding-left: 2%;
 }
 
-.view{
-    height: 40%;
-    width: 60%;
-    text-align: center;
-    padding-top: 1%;
-    border: 1px solid black; 
-    background-color: aliceblue;
-    display: inline-block;
+/* 送金相手 表示覧*/
+.acount{
+
+   background-color: #008BD1;
+
+   color: #ffffff;
+
+   width: 96%;
+   height: 60px;
+   margin-top: 15%;
+   margin-left: 2%;
+
+   border: none;
+
+   border-radius: 15px;
+   /* 影 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
-.null{
-    height: 70%;
-    width: 20%;
-    /* border: 1px solid blue; */
-    float: left;
+/* 相手の名前 */
+#acount_name {
+   background-color: #008BD1;
+   font-size: 10vw;
+   padding: 3%;
+   margin: 1%;
+   text-align: center;
+   border-radius: 5px;
+}
+
+/* 金額入力 */
+
+/* テキストボックス */
+#coinbox {
+   background-color: #f3f3f3;
+
+   font-size: 36px;
+
+   width: 95%;
+   height: 100px;
+
+   margin-top: 15%;
+   margin-left: 2.5%;
+
+   text-align: center;
+
+   border: none;
+
+   border-radius: 15px;
+
+   box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+/* 送金理由入力欄 */
+#commentbox {
+	background-color: #f3f3f3;
+
+	font-size:20px;
+
+	width:95%;
+	height:50px;
+
+	margin-top:10%;
+	margin-left:2.5%;
+
+	border:none;
+	border-radius:15px;
+}
+
+/* ボタン */
+button {
+	 display: inline-block;
+   background-color: #f3f3f3;
+
+   font-size: 6vw;
+
+   width: 44%;
+   height: 100px;
+   border: none;
+
+   border-radius: 15px;
+
+   box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+
+}
+#yes{
+	margin-top: 7.5%;
+	margin-left: 2.5%;
+}
+#no{
+	margin-top: 7.5%;
+	margin-left: 5%;
+	/* margin-right: 2.5%; */
+}
+/* 余白を基本的になしにする */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+         background-position:left center;
+         padding:75px 0px 75px 170px;   /* padding-top + padding-bottom + text area = image height */
+         margin:-90px 0px 0px -198px;   /* offset vertical: half of image height */
+                                       /* offset horizontal: half of image width and text area width */
+    }
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
 }
