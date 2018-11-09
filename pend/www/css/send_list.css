@@ -1,9 +1,9 @@
 * {
-  margin: 0px;
-  padding: 0px;
+    margin:0px;
+    padding:0px;
 }
 
-html {
+html{
   height: 100%;
 }
 
@@ -15,286 +15,137 @@ body {
   /* 文字の選択不可 */
   -webkit-user-select: none;
   background-color: #ffffff;
-  height: 100Vh;
-  width: 100%;
+
+  height:100Vh;
+  width:100%;
 }
 
 /* .container {
   height: 100%;
   /* 要素に対してグリッドコンテナを指定 */
-
-/* display: grid; */
-
-/* 行を指定 */
-
-/*grid-template-columns: 1fr 1fr;*/
-
-/* 行と列の間隔を指定 */
-
-/* grid-template-rows:6% 14% 80%;
+  /* display: grid; */
+  /* 行を指定 */
+  /*grid-template-columns: 1fr 1fr;*/
+  /* 行と列の間隔を指定 */
+  /* grid-template-rows:6% 14% 80%;
   grid-template-areas:
        "areaA"
        "areaB"
        "areaC";
 } */
 
-.main {
-  padding-top: 8%;
-  /* これはないと横にスクロールしてしまう。 */
-  width: 100%;
-  display: inline-block;
-}
-
 /*ヘッダー*/
+#header{
+  /* grid-area: areaA; */
 
-.header {
-  position: fixed;
-  width: 100%;
-  height: 8%;
+  height: 40px;
   background-color: #23d100;
-  line-height: 0;
-  font-size: 0;
+  font-size: 6vw;
   font-weight: 800;
   color: #ffffff;
-  /*text-align: left;*/
-  /*padding-left: 2%;*/
-  /*border-bottom: medium solid #e0e0e0;*/
+  text-align: left;
+  padding-left: 2%;
+  border-bottom: medium solid #e0e0e0;
 }
 
-.header .search {
-  display: inline-block;
-  text-align: center;
-  width: 80%;
-  height: 100%;
-  font-size: 0;
-  vertical-align: top;
+.search {
+  /* grid-area: areaB; */
+
+  height: 14%;
+  width: 100%;
+  padding-top: 5%
 }
 
-#setting {
-  vertical-align: top;
-  display: inline-block;
-  max-width: 20%;
-  width: 20%;
-  /*縦にはみ出るので必要*/
-  height: 100%;
-}
-
-/* 100%だと大きすぎる気がするので少し小さく */
-
-/* 設定は一旦見えなくして置く */
-
-.header img {
-  max-width: 90%;
-  max-height: 90%;
-  vertical-align: center;
-  /*display: none;*/
-}
-
-#setting img {
-  display: none;
-}
-
+/*検索欄*/
 #search_word {
-  display: inline-block;
-  width: 78%;
-  max-width: 80%;
+  background-color: #f3f3f3;
+  font-size: 5vw;
+  width: 70%;
+  height: 12%;
   text-align: left;
-  font-size: 3vh;
-  vertical-align: bottom;
-  border: 1%;
-  border: black;
-  height: 100%;
-  text-align: center;
-}
-
-#search_button {
-  display: inline-block;
-  width: 20%;
-  max-width: 20%;
-  height: 100%;
-  vertical-align: top;
-}
-
-#search_button img {
-  vertical-align: bottom;
-}
-
-/* 残高 */
-
-.balance {
-  background-color: #008BD1;
-  color: #ffffff;
-  width: 96%;
-  height: 25%;
-  margin-top: 15%;
-  margin-bottom: 2%;
-  margin-left: 2%;
   border: none;
-  /* 影 */
-  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);*/
-  /* 角を丸く */
-  -webkit-border-radius: 5px;
+  border-radius: 7px;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+  margin-left: 2%;
+  padding:3%;
 }
 
-.name {
-  text-align: center;
-  height: 40%;
-  padding-top: 5%;
-}
+/*検索ボタン*/
+#search_btn {
+  border-radius: 15px;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
+  height: 40px;
+  width: 20%;
 
-/*残高イメージ*/
-
-/*
-#balance_img {
-  display: inline-block;
-  padding-top: 15%;
-  padding-left: 10%;
-}
-*/
-
-/*ユーザ名表示*/
-
-#user_name {
-  display: inline-block;
-  width: 100%;
-  /*
-  padding-top: 15%;
-  padding-left: 20%;
-  */
-  font-size: 12vw;
+  background: #008bd1;
   color: #ffffff;
-  text-align: center;
-  max-height: 100%;
-  height: 100%;
-}
-
-/* 残高の数値 */
-
-#value {
-  padding: 0;
-  border: 0;
-  display: inline-block;
-  height: 50%;
-  width: 100%;
-}
-
-#coin {
-  display: inline-block;
-  /*margin-left: 10%;*/
-  text-align: right;
-  font-size: 12vw;
-  width: 50%;
-  height: 100%;
-  max-width: 50%;
-}
-
-/*通貨単位*/
-
-#unit {
-  display: inline-block;
-  text-align: left;
-  width: 50%;
-  /*padding-top: 10%;*/
-  font-size: 10vw;
-  height: 100%;
-  max-width: 50%;
-}
-
-/* 入力した文字を表示 */
-
-.show_input {
-  height: 10%;
-  text-align: center;
-  background-color: #ffffff;
-  font-size: 8vw;
-  font-weight: bold;
-  overflow: scroll;
-  /*自動改行なし*/
-  white-space: nowrap;
-}
-
-.show_input p {
-  display: inline-block;
-  height: 100%;
+  border:none;
+  font-size: 5vw;
+  padding:2%;
 }
 
 /*検索結果*/
-
-.view {
+.view{
   /* grid-area: areaC; */
-  height: 65%;
+
+  height: 75%;
   width: 100%;
   /*margin-left: 7.5%;*/
-  overflow: scroll;
+
+  overflow:scroll;
+
   text-align: center;
+
   background-color: #ffffff;
-  /*  align-content: space-around;
+
+/*  align-content: space-around;
   border:none;
 
   border-radius: 15px;
   box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);*/
 }
 
-.show_input {
-  height: 15%;
-  width: 96%;
-  max-width: 96%;
-  background-color: #f3f3f3;
-  margin: 0 auto;
-  /*padding: 5%;*/
-  border-radius: 5px;
-}
-
 .result {
-  display: inline-block;
-  height: 10%;
   width: 96%;
-  max-width: 96%;
-  background-color: #f3f3f3;
-  margin: 0 auto;
-  /*padding: 5%;*/
-  border-radius: 5px;
-  font-size: 0;
-  margin-top: 10px;
+  margin-bottom: 15%;
+  margin-top: 3%;
+  margin-left: 2%;
+  background: #f3f3f3;
+  box-shadow:  0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
 .result_name {
   font-size: 8vw;
+  position: relative;
   display: inline-block;
-  width: 80%;
-  height: 100%;
-  /*padding: 3% 5%;
+  padding: 3% 5%;
   text-decoration: none;
   align-content: space-around;
   /*background: #ffffff;*/
   background: #f3f3f3;
-  border-radius: 5px;
+  border-radius: 15px;
+
   font-weight: bold;
-  border: none;
-  overflow: scroll;
+
+  border:none;
 }
 
 /*検索結果表示+ボタン*/
-
-.result_btn {
+.result_btn{
   font-size: 7vw;
   position: relative;
   display: inline-block;
-  /*
   padding: 3% 5%;
   margin: 2%;
-  */
-  width: 20%;
-  height: 100%;
+
   text-decoration: none;
   align-content: space-around;
+
   /*background-color: #008bd1;*/
   background-color: #f3f3f3;
-  font-weight: bold;
-  border: none;
-}
 
-.result_btn img {
-  max-width: 70%;
-  max-height: 70%;
+  color: #23d100;
+  font-weight: bold;
+
+  border:none;
 }
