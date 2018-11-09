@@ -1,61 +1,43 @@
 <!DOCTYPE html>
 
 <html>
+	<head>
+		<!-- セキュリティポリシー -->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+		<!-- 英数字列を電話番号やメールアドレスとして認識しない -->
+		<meta name="format-detection" content="telephone=no">
+		<!-- タッチを強調したりする -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- 解像度とかレイアウトのもろもろの設定 -->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<!-- cssへのリンク -->
+		<link rel="stylesheet" type="text/css" href="css/send_coin.css">
 
-<head>
-	<!-- セキュリティポリシー -->
-	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
-	<!-- 英数字列を電話番号やメールアドレスとして認識しない -->
-	<meta name="format-detection" content="telephone=no">
-	<!-- タッチを強調したりする -->
-	<meta name="msapplication-tap-highlight" content="no">
-	<!-- 解像度とかレイアウトのもろもろの設定 -->
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-	<!-- cssへのリンク -->
-	<link rel="stylesheet" type="text/css" href="css/send_coin.css">
+		<title>送る金額を決定</title>
+	</head>
+	<body>
+		<header>送金</header>
 
-	<title>送る金額を決定</title>
-</head>
-
-<body>
-	<div class="container">
-		<!-- メニュー表示 -->
-		<div class="header">
-			<div class="title">
-				<p><span id="account">送り相手の名前</span>へ送金</p>
-			</div>
+		<!-- 送信相手を表示 -->
+		<div class="acount">
+			<p id="acount_name"> 送り相手の名前</p>
 		</div>
-		<!--ヘッダーフッターを表示させるために必要-->
-		<div class="main">
-			<!-- 残高表示 -->
-			<div class="balance">
-				<div class="name">
-					<!-- 一旦消します -->
-					<!--<img src="img/balance.png" id="balance_img">-->
-					<p id="user_name">ユーザー名</p>
-				</div>
-				<div id="value">
-					<span id="coin">1000</span><span id="unit">&nbsp;pen-D</span>
-				</div>
-			</div>
-
-			<!-- 金額入力 -->
-			<input type="text" id="coinbox" placeholder="送金額を入力">
-			<!-- 送信内容を記入 -->
-			<input type="text" id="commentbox" placeholder=" 送金理由を入力">
-
-		</div>
-
+		<!-- 金額入力 -->
+		<input type="text" id="coinbox" placeholder="送金額を入力">
+		<!-- 送信内容を記入 -->
+		<input type="text" id="commentbox" placeholder=" 送金理由を入力" 
 		<!-- 決定 -->
-		<div class="enter_box">
-			<button type="button" id="yes">
-				送金
-			</button>
-		</div>
-	</div>
-	<!-- jsへのリンク -->
-	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/send_coin.js"></script>
-</body>
-
+		<button type="button" id="yes">
+			<img src="img/coin.png"><br/>
+			送金
+		</button>
+		<!-- キャンセル -->
+		<button type="button" id="no" onclick="location.href = './send_list.html'">
+			<img src="img/cancel.png"><br/>
+			キャンセル
+		</button>
+		<!-- jsへのリンク -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/send_coin.js"></script>
+	</body>
 </html>

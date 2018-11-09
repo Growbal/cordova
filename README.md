@@ -7,9 +7,9 @@ ios 4.5.4
 
 ## 環境設定  
 npm install -g cordova  
-nginx 不明
+nginx 不明  
 ## Server
-node
+node 
 
 ## 使い方  
 不明   
