@@ -17,7 +17,8 @@ body {
   /* 文字の選択不可 */
   -webkit-user-select: none;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #fbfbfb;
+  overflow: hidden;
 }
 
 .main {
@@ -35,14 +36,14 @@ body {
   width: 100%;
   top: 0;
   height: 8%;
-  background-color: #5EC84E;
+  background-color: #fff;
   line-height: 0;
   font-size: 0;
   font-weight: 800;
-  color: #ffffff;
+  color: #232323;
   /*text-align: left;*/
   /*padding-left: 2%;*/
-  border-bottom: medium solid #e0e0e0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 .header .title {
@@ -56,6 +57,17 @@ body {
   font-style: italic;
 }
 
+.tradingtitle {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 3vh;
+  margin-top: 1vh;
+  vertical-align: top;
+  line-height: 80%;
+  font-style: italic;
+}
+
 #search, #setting {
   vertical-align: top;
   display: inline-block;
@@ -63,6 +75,8 @@ body {
   width: 20%;
   /*縦にはみ出るので必要*/
   height: 100%;
+  background-color: #fff;
+  border: none;
 }
 
 /* はみ出ないように */
@@ -84,11 +98,11 @@ body {
 /* 残高 */
 
 .balance {
-  background-color: #008BD1;
+  background-color: #5EC84E;
   color: #ffffff;
   width: 96%;
-  height: 20%;
-  margin-top: 13%;
+  height: 22%;
+  margin-top: 11%;
   margin-bottom: 2%;
   margin-left: 2%;
   border: none;
@@ -124,7 +138,7 @@ body {
   */
   font-size: 7vw;
   color: #ffffff;
-  margin-left: 50px;
+  margin-left: 70px;
   max-height: 100%;
   height: 100%;
 }
@@ -144,12 +158,10 @@ body {
 
 #coin {
   display: inline-block;
-  /*margin-left: 10%;*/
   text-align: right;
   font-size: 16vw;
-  width: 50%;
+  width: 70%;
   height: 100%;
-  max-width: 50%;
 }
 
 /*通貨単位*/
@@ -157,7 +169,7 @@ body {
 #unit {
   display: inline-block;
   text-align: left;
-  width: 40%;
+  width: 20%;
   margin-right: 5px;
   font-size: 6vw;
   height: 100%;
@@ -169,17 +181,15 @@ body {
 .view {
   width: 100%;
   margin: 10px auto;
-  /*max-height: 52%;*/
-  background-color: #ffffff;
   overflow: scroll;
-  height: 72%
+  height: 67%
 }
 
 .send, .receive {
   height: 40%;
   width: 90%;
   max-width: 90%;
-  background-color: #f3f3f3;
+  background-color: #fff;
   margin: 0 auto;
   padding: 5%;
   /* border-radius: 5px; */

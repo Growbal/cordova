@@ -13,7 +13,7 @@
 <body>
     <div class="header">
         <button type="button" id="setting">
-            <img src="./img/setting.png">
+            <img src="./img/back.png">
         </button>
         <div class="search">
             <input type="text" id="search_word" placeholder="相手の名前を入力">
@@ -25,33 +25,23 @@
     <div class="main">
         <!-- 残高表示 -->
         <div class="balance">
-            <div class="name">
-                <!-- 一旦消します -->
-                <!--<img src="img/balance.png" id="balance_img">-->
-                <p id="user_name">ユーザー名</p>
-            </div>
-            <div id="value">
-                <span id="coin">1000</span><span id="unit">&nbsp;pen-D</span>
-            </div>
+          <p style="margin:0 0 0 10px; padding-top:10px;">残金:</p>
+          <div id="value">
+            <span id="coin">1000</span><span id="unit">&nbsp;pen-D</span>
+          </div>
+
+          <p style="margin:0 0 0 10px;">Name:</p>
+          <div class="name">
+            <!-- 一旦消します -->
+            <!--<img src="img/balance.png" id="balance_img">-->
+            <p id="user_name">KousukeAbe</p>
+          </div>
         </div>
         <!--あとで中身は削除-->
-
+        <div class="show_input">
+            <span id="input_text"></span>
+        </div>
         <div class="view" id="view">
-            <div class="show_input">
-                <p>"<span id="input_text">Sakamoto</span>"の検索結果</p>
-            </div>
-            <div class="result">
-                <p class="result_name" id="userA">KazukiSakamoto</p>
-                <button type="button" class="result_btn" value=${res.name}>
-                    <img src="./img/enter.png">
-                </button>
-            </div>
-            <div class="result">
-                <p class="result_name" id="userA">KazukiSakamoto</p>
-                <button type="button" class="result_btn" value=${res.name}>
-                    <img src="./img/enter.png">
-                </button>
-            </div>
         </div>
     </div>
 

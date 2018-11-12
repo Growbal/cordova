@@ -29,20 +29,26 @@
 		<div class="main">
 			<!-- 残高表示 -->
 			<div class="balance">
-				<div class="name">
-					<!-- 一旦消します -->
-					<!--<img src="img/balance.png" id="balance_img">-->
-					<p id="user_name">ユーザー名</p>
-				</div>
+				<p style="margin:0 0 0 10px; padding-top:10px;">残金:</p>
 				<div id="value">
 					<span id="coin">1000</span><span id="unit">&nbsp;pen-D</span>
 				</div>
+
+				<p style="margin:0 0 0 10px;">Name:</p>
+				<div class="name">
+					<!-- 一旦消します -->
+					<!--<img src="img/balance.png" id="balance_img">-->
+					<p id="user_name">KousukeAbe</p>
+				</div>
 			</div>
+			<hr />
 
 			<!-- 金額入力 -->
+			<p style="margin:0 0 0 10px; padding-top:10px; font-weight:bold">送金額</p>
 			<input type="text" id="coinbox" placeholder="送金額を入力">
+			<p style="margin:0 0 0 10px; padding-top:10px; font-weight:bold">送金理由</p>
 			<!-- 送信内容を記入 -->
-			<input type="text" id="commentbox" placeholder=" 送金理由を入力">
+			<textarea id="commentbox" placeholder=" 送金理由を入力"></textarea>
 
 		</div>
 

@@ -1,8 +1,11 @@
 var app = {
     // Application Constructor。アプリ起動時に実行する関数かな
     initialize: function() {
-      document.getElementById("acount_name").innerHTML = sessionStorage.getItem('targetname');
+      document.getElementById("account").innerHTML = sessionStorage.getItem('targetname');
       document.getElementById("yes").addEventListener('click', this.onBackClickEvent.bind(this), false);
+
+      document.getElementById("user_name").innerHTML = sessionStorage.getItem('myname');
+      document.getElementById("coin").innerHTML = sessionStorage.getItem('balance');
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     // deviceready Event Handler
@@ -24,7 +27,7 @@ var app = {
       let comment = document.getElementById('commentbox').value;
       let text = document.getElementById('coinbox').value;
       if(text == "" || text <= 0 || comment ==""){//commentboxの空白をはじくように追加。
-        alert("異常なデータです");
+        alert("金額と送金理由を記入してください");
         return;
       }
       if(!/^\d*$/g.test(text)){

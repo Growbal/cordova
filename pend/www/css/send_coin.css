@@ -10,7 +10,8 @@ body {
     /* 文字の選択不可 */
     -webkit-user-select: none;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #fbfbfb;
+
     /* フォント指定 */
     /*font-family: "";*/
 }
@@ -28,18 +29,17 @@ body {
 /*ヘッダー*/
 
 .header {
-    height: 8%;
-    background-color: #23d100;
-    position: fixed;
-    width: 100%;
-    line-height: 0;
-    font-size: 0;
-    top: 0;
-    font-weight: 800;
-    color: #ffffff;
-    /*text-align: left;*/
-    /*padding-left: 2%;*/
-    /*border-bottom: medium solid #e0e0e0;*/
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  background-color: #fff;
+  line-height: 0;
+  font-size: 0;
+  font-weight: 800;
+  color: #232323;
+  /*text-align: left;*/
+  /*padding-left: 2%;*/
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 .header .title {
@@ -58,7 +58,7 @@ body {
     max-width: 20%;
     width: 20%;
     /*縦にはみ出るので必要*/
-    height: 100%;
+    height: 100%;ffffff
 }
 
 /* 設定は一旦見えなくして置く */
@@ -75,98 +75,101 @@ body {
     display: inline-block;
     padding-top: 8%;
     padding-bottom: 8%;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* 残高 */
-
 .balance {
-    background-color: #008BD1;
-    color: #ffffff;
-    width: 96%;
-    height: 25%;
-    margin-top: 15%;
-    margin-bottom: 2%;
-    margin-left: 2%;
-    border: none;
-    /* 影 */
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);*/
-    /* 角を丸く */
-    -webkit-border-radius: 5px;
+  background-color: #5EC84E;
+  color: #ffffff;
+  width: 96%;
+  height: 22%;
+  margin-top: 11%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  border: none;
+  /* 影 */
+  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);*/
+  /* 角を丸く */
+  -webkit-border-radius: 5px;
 }
-
 /*
 ここでまでで39%
 */
 
+/*ユーザ名表示*/
 .name {
-    text-align: center;
-    height: 40%;
-    padding-top: 5%;
+  text-align: left;
+  height: 40%;
 }
 
-/*ユーザ名表示*/
-
 #user_name {
-    display: inline-block;
-    width: 100%;
-    /*
+  display: inline-block;
+  width: 98%;
+  /*
   padding-top: 15%;
   padding-left: 20%;
   */
-    font-size: 12vw;
-    color: #ffffff;
-    text-align: center;
-    max-height: 100%;
-    height: 100%;
+  font-size: 7vw;
+  color: #ffffff;
+  margin-left: 70px;
+  max-height: 100%;
+  height: 100%;
+  padding-bottom: 10px;
 }
 
 /* 残高の数値 */
 
 #value {
-    padding: 0;
-    border: 0;
-    display: inline-block;
-    height: 50%;
-    width: 100%;
+  padding: 0;
+  border: 0;
+  display: inline-block;
+  height: 50%;
+  width: 100%;
+  margin-top: -5%;
+  text-align: right;
+
 }
 
 #coin {
-    display: inline-block;
-    /*margin-left: 10%;*/
-    text-align: right;
-    font-size: 12vw;
-    width: 50%;
-    height: 100%;
-    max-width: 50%;
+  display: inline-block;
+  text-align: right;
+  font-size: 16vw;
+  width: 70%;
+  height: 100%;
 }
 
 /*通貨単位*/
 
 #unit {
-    display: inline-block;
-    text-align: left;
-    width: 50%;
-    /*padding-top: 10%;*/
-    font-size: 10vw;
-    height: 100%;
-    max-width: 50%;
+  display: inline-block;
+  text-align: left;
+  width: 20%;
+  margin-right: 5px;
+  font-size: 6vw;
+  height: 100%;
+  max-width: 50%;
 }
+
 
 /* 金額入力 */
 
 /* テキストボックス */
 
 #coinbox {
-    background-color: #f3f3f3;
+    background-color: #fff;
     font-size: 4vh;
     width: 95%;
     height: 20%;
-    margin-top: 10%;
+    margin-top: 3%;
     margin-left: 2.5%;
     text-align: left;
     border: none;
     border-radius: 5px;
     /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);*/
+    padding: 10px 5% 5px 0;
+    text-align: right;
 }
 
 /* ここでまでで54% */
@@ -174,11 +177,11 @@ body {
 /* 送金理由入力欄 */
 
 #commentbox {
-    background-color: #f3f3f3;
+    background-color: #fff;
     font-size: 4vh;
     width: 95%;
     height: 200px;
-    margin-top: 10%;
+    margin-top: 3%;
     margin-left: 2.5%;
     border: none;
     border-radius: 5px;
@@ -204,6 +207,9 @@ body {
     font-size: 4vh;
     color: #ffffff;
     font-weight: 800;
+    width: 100%;
+    border: none;
+    background-color: #5EC84E;
 }
 
 /* 余白を基本的になしにする */
