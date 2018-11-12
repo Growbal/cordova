@@ -1,61 +1,143 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<!-- セキュリティポリシー -->
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
-		<!-- 英数字列を電話番号やメールアドレスとして認識しない -->
-		<meta name="format-detection" content="telephone=no">
-		<!-- タッチを強調したりする -->
-		<meta name="msapplication-tap-highlight" content="no">
-		<!-- 解像度とかレイアウトのもろもろの設定 -->
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-		<!-- cssへのリンク -->
-		<link rel="stylesheet" type="text/css" href="css/home.css">
 
-		<title>pen-d Home</title>
-	</head>
-	<body>
-			<!-- メニュー表示 -->
-			<div class= "header">pen-D</div>
+<head>
+	<!-- セキュリティポリシー -->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+	<!-- 英数字列を電話番号やメールアドレスとして認識しない -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- タッチを強調したりする -->
+	<meta name="msapplication-tap-highlight" content="no">
+	<!-- 解像度とかレイアウトのもろもろの設定 -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<!-- cssへのリンク -->
+	<link rel="stylesheet" type="text/css" href="css/home.css">
 
-			<!-- 残高表示 -->
-			<div class="balance">
-				<img src="img/balance.png" id= "balance_img">
-				<p id= "user_name">ユーザー名</p>
-				<p id= "coin">1000000</p>
-				<p id="unit">&nbsp;pen-D</p>
+	<title>pen-d Home</title>
+</head>
+
+<body>
+	<!-- メニュー表示 -->
+	<div class="header">
+		<button type="button" id="setting">
+			<img src="./img/setting.png">
+		</button>
+		<div class="title">Pen-d</div>
+		<button type="button" id="search">
+			<img src="./img/search.png">
+		</button>
+	</div>
+	<div class="main">
+		<!-- 残高表示 -->
+		<div class="balance">
+			<p style="margin:0 0 0 10px; padding-top:10px;">残金:</p>
+			<div id="value">
+				<span id="coin">1000</span><span id="unit">&nbsp;pen-D</span>
 			</div>
-
-			<div class="btn_block">
-				<!-- 送金 -->
-				<button type="button" id="send_coin">
-					<img src="img/coin2.png"><br>
-					送金
-				</button>
-
-				<!-- 取引履歴 -->
-				<button type="button" id="transaction">
-					<img src="img/transaction.png"><br>
-					取引履歴
-				</button>
-
-				<!-- 設定 -->
-				<button type="button" id="setting">
-					<img src="img/setting.png"><br>
-					設定
-				</button>
-
-				<!-- お知らせ -->
-				<button type="button" id="notification">
-					<img src="img/notification.png"><br>
-					お知らせ
-				</button>
-
+			
+			<p style="margin:0 0 0 10px;">Name:</p>
+			<div class="name">
+				<!-- 一旦消します -->
+				<!--<img src="img/balance.png" id="balance_img">-->
+				<p id="user_name">KousukeAbe</p>
 			</div>
+		</div>
+		<hr />
 
-		<!-- jsへのリンク -->
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/home.js"></script>
-	</body>
+		<!--取引履歴表示-->
+		<div class="view" id="view">
+			<div class="receive">
+				<p class="aite">入金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">日時: 2018-11-1 18:14</p>
+				</div>
+				<div class="right plus">
+					<p>+1000</p>
+				</div>
+				<div class="comment">
+					<p>コメント: aiueoa
+						dfajjlllllllllllllllssssssssssssssssssssssssss</p>
+				</div>
+			</div>
+			<div class="send">
+				<p class="aite">出金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">2018-8-6 16:37</p>
+				</div>
+				<div class="right hiku">
+					<p>-100</p>
+				</div>
+				<div class="comment">
+					<p>comment: これこれこういう目的で出金しました。
+						よろしくお願いします。
+					</p>
+				</div>
+			</div>
+			<div class="send">
+				<p class="aite">出金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">2018-8-6 16:37</p>
+				</div>
+				<div class="right hiku">
+					<p>-100</p>
+				</div>
+				<div class="comment">
+					<p>comment: aiueo</p>
+				</div>
+			</div>
+			<div class="send">
+				<p class="aite">出金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">2018-8-6 16:37</p>
+				</div>
+				<div class="right hiku">
+					<p>-100</p>
+				</div>
+				<div class="comment">
+					<p>comment: aiueo</p>
+				</div>
+			</div>
+			<div class="send">
+				<p class="aite">出金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">2018-8-6 16:37</p>
+				</div>
+				<div class="right hiku">
+					<p>-100</p>
+				</div>
+				<div class="comment">
+					<p>comment: aiueo</p>
+				</div>
+			</div>
+			<div class="send">
+				<p class="aite">出金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">2018-8-6 16:37</p>
+				</div>
+				<div class="right hiku">
+					<p>-100</p>
+				</div>
+			</div>
+			<div class="send">
+				<p class="aite">出金: Kazuki Sakamoto</p>
+				<div class="left">
+					<p class="date">2018-8-6 16:37</p>
+				</div>
+				<div class="right hiku">
+					<p>-100</p>
+				</div>
+				<div class="comment">
+					<p>comment: aiueo</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jsへのリンク -->
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javaxcript" src="js/trade.js"></script>
+</body>
+
 </html>
