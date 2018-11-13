@@ -44,7 +44,7 @@ body {
   width: 100%;
   display: inline-block;
   overflow: hidden;
-  
+
 }
 
 /*ヘッダー*/
@@ -214,7 +214,6 @@ body {
 .show_input {
   height: 10%;
   text-align: center;
-  background-color: #ffffff;
   font-size: 8vw;
   font-weight: bold;
   overflow: scroll;
