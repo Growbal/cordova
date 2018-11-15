@@ -2,15 +2,33 @@ var app = {
     // Application Constructor。アプリ起動時に実行する関数かな
     initialize: function() {
       document.getElementById("submit").addEventListener('click', this.SendMoney.bind(this), false);
-      //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+       document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     // deviceready Event Handler
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-      console.log("ds");
-        this.receivedEvent('deviceready');
+      if(localStorage.getItem('id') && localStorage.getItem('password')){
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            switch ( xhr.readyState ) {
+                case 4:
+                    if( xhr.status == 200 || xhr.status == 304 ) {
+                        if(JSON.parse(xhr.response).length){
+                          sessionStorage.setItem("myname", localStorage.getItem('id'));
+                          location.href = "./home.html";
+                        };
+                    } else {
+                        console.log( 'Failed. HttpStatus: '+ xhr.statusText );
+                    }
+                    break;
+            }
+        };
+        xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/Login?username=${localStorage.getItem('id')}&password=${localStorage.getItem('password')}`, false);
+        xhr.send("");
+        xhr.abort();
+      }
     },
 
     SendMoney: function(){
@@ -29,7 +47,7 @@ var app = {
                   if( xhr.status == 200 || xhr.status == 304 ) {
                       //さっきのwelcomeうほうほは　responseTextの中に入っているッッ!!
                       app.changePage(JSON.parse(xhr.response));
-                      document.getElementById('username').value = data.length;
+                      // document.getElementById('username').value = data.length;
                   } else {
                     //エラー処理
                       console.log( 'Failed. HttpStatus: '+ xhr.statusText );
@@ -53,6 +71,15 @@ var app = {
         document.getElementById("error").innerHTML = "ユーザー名、またはパスワードが違っています"
         return;
       }
+
+      let check = document.getElementById("check");
+      if(check.checked){
+        localStorage.setItem("id", document.getElementById('username').value);
+        localStorage.setItem("password", document.getElementById('password').value);
+      };
+
+      let username = document.getElementById('username').value;
+      sessionStorage.setItem("myname", username);
       location.href = "./home.html";
     }
 };

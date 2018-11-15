@@ -4,7 +4,18 @@ var app = {
       //deviceready... ネイティブとHTMLのブリッジのために初期化を行う。その初期化で発火するのがこのイベント
       //ちなみにHTMLが読み込んでるときはDOMContentLoadedイベントが発火する
       //その次にload。いつも使ってるやつ。その後にdeviceready
-      document.getElementById("search_btn").addEventListener('click', this.SearchUser.bind(this), false);
+      var settingBtn = document.querySelector("#setting");
+      var searchBtn = document.querySelector("#search_button");
+      settingBtn.onclick = function(){
+        location.href ="home.html";
+      }
+
+      document.getElementById("user_name").innerHTML = sessionStorage.getItem('myname');
+      document.getElementById("coin").innerHTML = sessionStorage.getItem('balance');
+      let balance = sessionStorage.getItem('balance');
+
+
+      document.getElementById("search_button").addEventListener('click', this.SearchUser.bind(this), false);
       //  document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     // deviceready Event Handler
@@ -21,6 +32,11 @@ var app = {
       var xhr = new XMLHttpRequest();
       //ここも大事。　DOMどすえ
       let text = document.getElementById('search_word').value;
+      if(text == ""){
+        alert("入力してください");
+        return;
+      }
+      document.getElementById("input_text").innerHTML = `${text}の検索結果`;
 
       // ハンドラの登録.
       xhr.onload = function() {
@@ -52,23 +68,29 @@ var app = {
 
     Total: function(value){
       let view = document.getElementById("view");
+      let name = sessionStorage.getItem('myname');
+
+
       view.innerHTML = "";
-      if(value.length <= 0)view.innerHTML = "該当する名前はありませんｗ"
       for(res of value){
+        if(name == res.name)continue;
         view.innerHTML += `
           <div class="result">
             <p class="result_name" id="userA">${res.name}</p>
-            <button type="button" class="result_btn" value=${res.name}>選択</button>
+            <button type="button" class="result_btn" value=${res.name}>
+                <img src="./img/enter.png">
+            </button>
           </div>
         `
       }
+      if(value.length <= 0 || view.innerHTML == "")view.innerHTML = "該当する名前はありませんｗ"
       let contents = document.getElementsByClassName('result_btn');
       for(i of contents) i.addEventListener('click', (e) => {app.changePage(e)});
     },
 
     changePage: function(e){
       let target = e.target.value;
-      localStorage.setItem("targetname", target);
+      sessionStorage.setItem("targetname", target);
       location.href = "./send_coin.html";
     }
 };

@@ -18,7 +18,7 @@ var app = {
 
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = "Abe";
+			let name = sessionStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -29,7 +29,7 @@ var app = {
                       //さっきのwelcomeうほうほは　responseTextの中に入っているッッ!!
                       var data = JSON.parse(xhr.response); // responseXML もあり
 											console.log(data);
-                      document.getElementById("coin").innerHTML = data[0]["balance"].toLocaleString();
+                      document.getElementById("coin").innerHTML = data[0]["balance"].tosessioneString();
                   } else {
                     //エラー処理
                       console.log( 'Failed. HttpStatus: '+ xhr.statusText );
@@ -51,7 +51,7 @@ var app = {
     TradingCheck: function(){
       //HTTP通信をする所
       var xhr = new XMLHttpRequest();
-			let name = "Abe";
+			let name = sessionStorage.getItem('myname');
       // ハンドラの登録.
       xhr.onload = function() {
           //readyState ... 送っている間の状況を見ることができる。すげえやつ
@@ -80,15 +80,17 @@ var app = {
     },
 
     tradevisible: function(data){
-      let name = "Abe";
+      let name = sessionStorage.getItem('myname');
       let view = document.getElementById("view");
       view.innerHTML = "";
+      let tradelist = data.trade.reverse();
+      console.log(tradelist);
       for(let i of data.trade){
         let date = new Date(i.trading_date);
         if(data.namelist[i.pay_id - 1].name == name){
           view.innerHTML += `
           <div class="send">
-            <p class="aite">受取相手: ${data.namelist[i.receive_id - 1].name}</p>
+            <p class="aite">出金: ${data.namelist[i.receive_id - 1].name}</p>
             <div class="left">
             <p class="date">${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}</p>
             </div>
@@ -100,7 +102,7 @@ var app = {
         }else{
           view.innerHTML += `
           <div class="receive">
-            <p class="aite">送金相手: ${data.namelist[i.pay_id - 1].name}</p>
+            <p class="aite">入金: ${data.namelist[i.pay_id - 1].name}</p>
             <div class="left">
               <p class="date">${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}</p>
             </div>

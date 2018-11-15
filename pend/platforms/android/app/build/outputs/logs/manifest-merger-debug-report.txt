@@ -69,9 +69,9 @@ ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\
 	android:name
 		ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\src\main\AndroidManifest.xml:6:166-193
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\src\main\AndroidManifest.xml:8:97-11:29
+ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\src\main\AndroidManifest.xml:8:157-11:29
 	android:label
-		ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\src\main\AndroidManifest.xml:8:112-149
+		ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\src\main\AndroidManifest.xml:8:172-209
 action#android.intent.action.MAIN
 ADDED from C:\Users\1521013\Documents\GitHub\cordova\pend\platforms\android\app\src\main\AndroidManifest.xml:9:17-69
 	android:name
