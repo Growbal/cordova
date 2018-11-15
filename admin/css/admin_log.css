@@ -1,0 +1,80 @@
+html {
+  height: 100%;
+}
+
+/*基本は余白なし*/
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+body {
+   height: 100%;
+   background-color: #ffffff;
+}
+
+a{
+   color: #ffffff;
+}
+
+.grid {
+   height: 100%;
+   display: grid;
+   /*grid-gap: 10px;*/
+   grid-template-columns: 14% 86%;
+   grid-template-areas: "areaA areaB";
+}
+
+/* メニューバー */
+.menu {
+   grid-area: areaA;
+   background-color: #404040;
+   color: #ffffff;
+   height: 100%;
+}
+
+.logArea {
+   grid-area: areaB;
+   /* スクロールの指定 */
+   overflow-y: scroll;
+   /*overflow:hidden;*/
+}
+.logArea::-webkit-scrollbar{
+    display:none;
+}
+/* menuバー */
+#a,#b,#c {
+   padding: 25px;
+   font-size: 30px;
+}
+
+.aLog {
+   width: 96%;
+   margin-top: 2%;
+   margin-left: 2%;
+   border-bottom: inset 3px;
+   font-size: 24px;
+}
+
+#send_user,#arrow,#get_user {
+   display: inline-block;
+   font-weight: 700;
+}
+#comment {
+   text-align: center;
+}
+#send_pd {
+   display: inline-block;
+   width: 80%;
+   text-align: right;
+   font-weight: 700;
+}
+#unit {
+   display: inline-block;
+   width: 19%;
+   text-align: left;
+   font-weight: 700;
+}
+#date {
+   text-align: right;
+}
