@@ -41,7 +41,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/BlanceCheck?targetname=${name}`, false);
+      xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/BlanceCheck?targetname=${name}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");
@@ -72,7 +72,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/TradingCheck?name=${name}`, false);
+      xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/TradingCheck?name=${name}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");

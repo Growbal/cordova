@@ -59,7 +59,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/UserSearch?name=${text}`, false);
+      xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/UserSearch?name=${text}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");
@@ -89,7 +89,12 @@ var app = {
     },
 
     changePage: function(e){
-      let target = e.target.value;
+      let target;
+      if(e.target.tagName == "IMG"){
+        target = e.target.parentNode.value;
+      }else{
+        target = e.target.value;
+      }
       sessionStorage.setItem("targetname", target);
       location.href = "./send_coin.html";
     }

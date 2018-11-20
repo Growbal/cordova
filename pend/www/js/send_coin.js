@@ -86,7 +86,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/Trading?servecename=${sessionStorage.getItem('myname')}&targetname=${sessionStorage.getItem('targetname')}&value=${text}&comment=${comment}`, false);
+      xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/Trading?servecename=${sessionStorage.getItem('myname')}&targetname=${sessionStorage.getItem('targetname')}&value=${text}&comment=${comment}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");

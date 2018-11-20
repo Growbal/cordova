@@ -25,7 +25,7 @@ var app = {
                     break;
             }
         };
-        xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/Login?username=${localStorage.getItem('id')}&password=${localStorage.getItem('password')}`, false);
+        xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/Login?username=${localStorage.getItem('id')}&password=${localStorage.getItem('password')}`, false);
         xhr.send("");
         xhr.abort();
       }
@@ -59,7 +59,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/Login?username=${username}&password=${password}`, false);
+      xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/Login?username=${username}&password=${password}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");

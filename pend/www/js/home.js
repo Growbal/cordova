@@ -82,7 +82,7 @@ var app = {
       //どこのサーバーに送るかを指定する
       //サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
       //GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-      xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/BlanceCheck?targetname=${name}`, false);
+      xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/BlanceCheck?targetname=${name}`, false);
       // POST 送信の場合は Content-Type は固定.
       //openだけでは送れていない。sendをすることで送ったことになる
       xhr.send("");
@@ -113,7 +113,7 @@ var app = {
 			//どこのサーバーに送るかを指定する
 			//サーバーへの送り方は２種類ある。 GETとPOSTの２種類がある。
 			//GETはフロントからデータを送らないリクエスト。POSTはフロントからデータを送るリクエスト
-			xhr.open('GET', `http://jupiter.tntetsu-lab.cs.kanagawa-it.ac.jp/TradingCheck?name=${name}`, false);
+			xhr.open('GET', `https://growbalactive-pend.herokuapp.com/api/TradingCheck?name=${name}`, false);
 			// POST 送信の場合は Content-Type は固定.
 			//openだけでは送れていない。sendをすることで送ったことになる
 			xhr.send("");
@@ -122,6 +122,7 @@ var app = {
 
 		tradevisible: function(data){
 			let name = sessionStorage.getItem('myname');
+			let reg = new RegExp(name);
 			let view = document.getElementById("view");
 			view.innerHTML = "";
 			let tradelist = data.trade.reverse();
@@ -130,7 +131,7 @@ var app = {
 				let date = new Date(i.trading_date);
 				let comment_log = i.reason;
 				if(i.reason == null)comment_log = "Trading data of old version";
-				if(data.namelist[i.pay_id - 1].name == name){
+				if(data.namelist[i.pay_id - 1].name.match(reg)){
 					view.innerHTML += `
 					<div class="send">
 						<p class="aite">出金: ${data.namelist[i.receive_id - 1].name}</p>
