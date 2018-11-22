@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- cssへのリンク -->
+	<link rel="stylesheet" type="text/css" href="css/admin_send.css">
+	<title>pen-d一斉送信</title>
+</head>
+
+<body>
+	<div class="grid">
+			<div class ="menu">
+				<p id= "a">menu</p>
+				<p id= "b">＊ 一斉送信</p>
+				<p id="c"><a href="admin_log.html">＊ 全体ログ</a></p>
+			</div>
+				<div class="sendArea">
+				<div class="select">
+          <div class="button">
+					<p id="user_name"><span id="name">KousukeAbe</span>
+            <button type="button" id="pend100"onclick="pendCountUp(100);">100pd</button>
+            <button type="button" id="pend300"onclick="pendCountUp(300);">300pd</button>
+            <button type="button" id="pend500"onclick="pendCountUp(500);">500pd</button>
+            <button type="button" id="cancel" onclick="reset()">キャンセル</button>
+            合計: <span id="pendOutput">0</span></p>
+          <p id="user_name"><span id="name1">KousukeAbe1</span>
+            <button type="button" id="pend100"onclick="pendCountUp1(100);">100pd</button>
+            <button type="button" id="pend300"onclick="pendCountUp1(300);">300pd</button>
+            <button type="button" id="pend500"onclick="pendCountUp1(500);">500pd</button>
+            <button type="button" id="cancel" onclick="reset1()">キャンセル</button>
+            合計: <span id="pendOutput1">0</span></p>
+          <p id="user_name1"><span id="name2">KousukeAbe2</span>
+            <button type="button" id="pend100"onclick="pendCountUp2(100);">100pd</button>
+            <button type="button" id="pend300"onclick="pendCountUp2(300);">300pd</button>
+            <button type="button" id="pend500"onclick="pendCountUp2(500);">500pd</button>
+            <button type="button" id="cancel" onclick="reset2()">キャンセル</button>
+            合計: <span id="pendOutput2">0</span></p>
+          <p id="user_name2"><span id="name3">KousukeAbe3</span>
+            <button type="button" id="pend100"onclick="pendCountUp3(100);">100pd</button>
+            <button type="button" id="pend300"onclick="pendCountUp3(300);">300pd</button>
+            <button type="button" id="pend500"onclick="pendCountUp3(500);">500pd</button>
+            <button type="button" id="cancel" onclick="reset3()">キャンセル</button>
+            合計: <span id="pendOutput3">0</span></p>
+          <p id="user_name3"><span id="name4">KousukeAbe4</span>
+            <button type="button" id="pend100"onclick="pendCountUp4(100);">100pd</button>
+            <button type="button" id="pend300"onclick="pendCountUp4(300);">300pd</button>
+            <button type="button" id="pend500"onclick="pendCountUp4(500);">500pd</button>
+            <button type="button" id="cancel" onclick="reset4()">キャンセル</button>
+            合計: <span id="pendOutput4">0</span></p>
+          <p id="user_name4"><span id="name5">KousukeAbe5</span>
+            <button type="button" id="pend100"onclick="pendCountUp5(100);">100pd</button>
+            <button type="button" id="pend300"onclick="pendCountUp5(300);">300pd</button>
+            <button type="button" id="pend500"onclick="pendCountUp5(500);">500pd</button>
+            <button type="button" id="cancel" onclick="reset5()">キャンセル</button>
+            合計: <span id="pendOutput5">0</span></p>
+				</div>
+			</div>
+
+			<button type="button" id="send"onclick="aiueo()">
+				送金
+			</button>
+				</div>
+			</div>
+	<!-- jsへのリンク -->
+	<script type="text/javascript" src="js/admin_send.js"></script>
+
+</body>
+
+</html>
