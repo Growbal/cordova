@@ -1,44 +1,24 @@
-let mysql = require('mysql');
-const config = {
-  "db": {
-    "username": "root",
-    "password": null,
-    "database": "pen_d_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "logging": false
-  },
-  "session": {
-    "name": "name",
-    "secret": "secret"
-  },
-  "ssl": {
-    "enabled": false,
-    "key": "",
-    "cert": ""
-  }
-}
+const { Client } = require('pg');
 
+const client = new Client({
+  connectionString: "postgres://svmhlnzrgswizv:14d5e13982584e462bab99f9d732dfe26c9fe2548bfc0f9c40da69806ac3ec88@ec2-54-83-8-246.compute-1.amazonaws.com:5432/d9rskraf37qf6i",
+  ssl: true,
+});
 
 class DBTemp {
 	//DBにコネクション
 	getConnection () {
-		this.con = mysql.createConnection({
-			host: config.db.host,
-			user: config.db.username,
-			password: config.db.password,
-			database: config.db.database
-		});
-		this.con.connect();
+    client.connect();
 	}
 
 	getDisconnection () {
-		this.con.end();
+		client.end();
 	}
 
   queryAction(values, holder, key, call){
-    this.con.query(values, holder, function (error, results, fields) {
-      call(results);
+    client.query(values, holder, (err, res) => {
+      console.log(err);
+      call(res);
     });
   }
 }

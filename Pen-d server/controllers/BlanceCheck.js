@@ -1,15 +1,14 @@
 let DBTempate = require('./../models/DBTemplate');
 
-let DBTemp = new DBTempate;
-DBTemp.getConnection();
-
 function process(req, res, data){
-  let value = 'SELECT balance FROM balance WHERE user_id = (select user_id from user where name = ?)';
+  let DBTemp = new DBTempate;
+  DBTemp.getConnection();
+  let value = 'SELECT balance FROM balance WHERE user_id = (select user_id from user_data where name = $1)';
   let holder = data.split("=");
-  DBTemp.queryAction(value, [holder[1]], 'balance', (result) => {
-    console.log(result);
-    res.write(JSON.stringify(result));
+  DBTemp.queryAction(value, [decodeURI(holder[1])], 'balance', (result) => {
+    res.write(JSON.stringify(result.rows));
     res.end();
+    return;
   });
 }
 

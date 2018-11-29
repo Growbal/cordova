@@ -1,0 +1,11 @@
+{
+    "db": {
+        "postgres": {
+            "host": "ec2-54-83-8-246.compute-1.amazonaws.com",
+            "user": "svmhlnzrgswizv",
+            "password": "14d5e13982584e462bab99f9d732dfe26c9fe2548bfc0f9c40da69806ac3ec88",
+            "port": 5432,
+            "database":"d9rskraf37qf6i"
+        }
+    }
+}

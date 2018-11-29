@@ -1,0 +1,302 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  /* iosの長押し無効 */
+  -webkit-touch-callout: none;
+  /* 文字サイズの自動調整 */
+  -webkit-text-size-adjust: none;
+  /* 文字の選択不可 */
+  -webkit-user-select: none;
+  background-color: #fbfbfb;
+  height: 100Vh;
+  width: 100%;
+}
+
+/* .container {
+  height: 100%;
+  /* 要素に対してグリッドコンテナを指定 */
+
+/* display: grid; */
+
+/* 行を指定 */
+
+/*grid-template-columns: 1fr 1fr;*/
+
+/* 行と列の間隔を指定 */
+
+/* grid-template-rows:6% 14% 80%;
+  grid-template-areas:
+       "areaA"
+       "areaB"
+       "areaC";
+} */
+
+.main {
+  padding-top: 8%;
+  /* これはないと横にスクロールしてしまう。 */
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  
+}
+
+/*ヘッダー*/
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  background-color: #fff;
+  line-height: 0;
+  font-size: 0;
+  font-weight: 800;
+  color: #232323;
+  /*text-align: left;*/
+  /*padding-left: 2%;*/
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+
+}
+
+.header .search {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  height: 100%;
+  font-size: 0;
+  vertical-align: top;
+}
+
+#setting {
+  vertical-align: top;
+  display: inline-block;
+  max-width: 20%;
+  width: 20%;
+  /*縦にはみ出るので必要*/
+  height: 100%;
+  background-color: #fff;
+  border: none;
+}
+
+/* 100%だと大きすぎる気がするので少し小さく */
+
+/* 設定は一旦見えなくして置く */
+
+.header img {
+  max-height: 60%;
+  vertical-align: center;
+  /*display: none;*/
+}
+
+#search_word {
+  display: inline-block;
+  width: 78%;
+  max-width: 80%;
+  text-align: left;
+  font-size: 3vh;
+  border: none;
+  height: 60%;
+  text-align: center;
+  background-color: #F5F5F5;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+#search_button {
+  vertical-align: top;
+  display: inline-block;
+  max-width: 20%;
+  width: 20%;
+  /*縦にはみ出るので必要*/
+  height: 100%;
+  background-color: #fff;
+  border: none;
+}
+
+#search_button img {
+  max-height:60%;
+}
+
+/* 残高 */
+
+.balance {
+  background-color: #5EC84E;
+  color: #ffffff;
+  width: 96%;
+  height: 22%;
+  margin-top: 11%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  border: none;
+  /* 影 */
+  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);*/
+  /* 角を丸く */
+  -webkit-border-radius: 5px;
+}
+
+.name {
+  text-align: center;
+  height: 40%;
+  padding-bottom: 10px;
+}
+
+/*残高イメージ*/
+
+/*
+#balance_img {
+  display: inline-block;
+  padding-top: 15%;
+  padding-left: 10%;
+}
+*/
+
+/*ユーザ名表示*/
+.name {
+  text-align: left;
+  height: 40%;
+}
+
+#user_name {
+  display: inline-block;
+  width: 98%;
+  /*
+  padding-top: 15%;
+  padding-left: 20%;
+  */
+  font-size: 7vw;
+  color: #ffffff;
+  margin-left: 70px;
+  max-height: 100%;
+  height: 100%;
+}
+
+/* 残高の数値 */
+
+#value {
+  padding: 0;
+  border: 0;
+  display: inline-block;
+  height: 50%;
+  width: 100%;
+  margin-top: -5%;
+  text-align: right;
+
+}
+
+#coin {
+  display: inline-block;
+  text-align: right;
+  font-size: 16vw;
+  width: 70%;
+  height: 100%;
+}
+
+/*通貨単位*/
+
+#unit {
+  display: inline-block;
+  text-align: left;
+  width: 20%;
+  margin-right: 5px;
+  font-size: 6vw;
+  height: 100%;
+  max-width: 50%;
+}
+
+/* 入力した文字を表示 */
+
+.show_input {
+  height: 10%;
+  text-align: center;
+  background-color: #ffffff;
+  font-size: 8vw;
+  font-weight: bold;
+  overflow: scroll;
+  /*自動改行なし*/
+  white-space: nowrap;
+}
+
+.show_input p {
+  display: inline-block;
+  height: 100%;
+}
+
+/*検索結果*/
+
+.view {
+  width: 90%;
+  margin: 10px auto;
+  overflow: scroll;
+  height: 60vh;
+}
+
+.show_input {
+  height: 15%;
+  width: 96%;
+  max-width: 96%;
+  margin: 0 auto;
+  margin: 10px 0 10px 0;
+  /*padding: 5%;*/
+}
+
+.result {
+  display: inline-block;
+  height: 10%;
+  width: 96%;
+  max-width: 96%;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+  /*padding: 5%;*/
+  border-radius: 5px;
+  font-size: 0;
+  margin-top: 10px;
+  padding: 10px 0 10px 0;
+
+}
+
+.result_name {
+  font-size: 8vw;
+  display: inline-block;
+  width: 80%;
+  height: 100%;
+  /*padding: 3% 5%;
+  text-decoration: none;
+  align-content: space-around;
+  /*background: #ffffff;*/
+  background: #f3f3f3;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  overflow: scroll;
+}
+
+/*検索結果表示+ボタン*/
+
+.result_btn {
+  font-size: 7vw;
+  position: relative;
+  display: inline-block;
+  /*
+  padding: 3% 5%;
+  margin: 2%;
+  */
+  width: 20%;
+  height: 100%;
+  text-decoration: none;
+  align-content: space-around;
+  background-color: #f3f3f3;
+  font-weight: bold;
+  border: none;
+  vertical-align: bottom;
+}
+
+.result_btn img {
+  max-width: 40%;
+  max-height: 40%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<!-- セキュリティポリシー -->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+	<!-- 英数字列を電話番号やメールアドレスとして認識しない -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- タッチを強調したりする -->
+	<meta name="msapplication-tap-highlight" content="no">
+	<!-- 解像度とかレイアウトのもろもろの設定 -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<!-- cssへのリンク -->
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+
+	<title>pen-d Home</title>
+</head>
+
+<body>
+	<!-- メニュー表示 -->
+	<div class="header">
+		<button type="button" id="setting">
+			<img src="./img/logout.png">
+		</button>
+		<div class="title">Pen-d</div>
+		<button type="button" id="search">
+			<img src="./img/search.png">
+		</button>
+	</div>
+	<div class="main">
+		<!-- 残高表示 -->
+		<div class="balance">
+			<p style="margin:0 0 0 10px; padding-top:10px;">残金:</p>
+			<div id="value">
+				<span id="coin">1000</span><span id="unit">&nbsp;pen-D</span>
+			</div>
+
+			<p style="margin:0 0 0 10px;">Name:</p>
+			<div class="name">
+				<!-- 一旦消します -->
+				<!--<img src="img/balance.png" id="balance_img">-->
+				<p id="user_name">KousukeAbe</p>
+			</div>
+		</div>
+		<hr />
+		<div class="tradingtitle">取引履歴</div>
+
+		<!--取引履歴表示-->
+		<div class="view" id="view"></div>
+	</div>
+
+	<!-- jsへのリンク -->
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javaxcript" src="js/trade.js"></script>
+</body>
+
+</html>
