@@ -1,0 +1,65 @@
+html{
+  height: 100%;
+}
+.grid {
+   height: 100%;
+   display: grid;
+   /*grid-gap: 10px;*/
+   grid-template-columns: 14% 86%;
+   grid-template-areas: "areaA areaB";
+}
+/* メニューバー */
+.menu {
+   grid-area: areaA;
+   background-color: #404040;
+   color: #ffffff;
+   height: 100%;
+}
+/*基本は余白なし*/
+.sendArea {
+   grid-area: areaB;
+   /* スクロールの指定 */
+   /* overflow-y: scroll; */
+   overflow:hidden;
+}
+#a,#b,#c {
+   padding: 25px;
+   font-size: 30px;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.select{
+ font-size: 30px;
+ margin-left: 100px;
+ text-align: left;
+ overflow: auto;
+}
+#pend100{
+ font-size: 30px;
+ margin-left: 100px;
+}
+#pend300{
+ font-size: 30px;
+ margin-left: 100px;
+}
+#pend500{
+ font-size: 30px;
+ margin-left: 100px;
+}
+#cancel{
+ font-size: 30px;
+ margin-left: 100px;
+}
+#total{
+ font-size: 30px;
+ margin-left: 100px;
+}
+body{
+  text-align:center;
+  height: 100%;
+}
+#send{
+  font-size: 30px;
+}
