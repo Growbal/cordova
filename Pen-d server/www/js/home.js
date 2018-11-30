@@ -1,7 +1,7 @@
 // html内の要素を読み込む
 var sendCoinBtn = document.querySelector("#search");
 var transactionBtn = document.querySelector("#transaction");
-var settingBtn = document.querySelector("#setting");
+var logoutBtn = document.querySelector("#logout");
 var notificationBtn = document.querySelector("#notification");
 
 // ボタンが押されたときに関数を実行する
@@ -11,13 +11,11 @@ sendCoinBtn.onclick = function(){
 // transactionBtn.onclick = function(){
 // 	GoLink(2);
 // }
-settingBtn.onclick = function(){
+logoutBtn.onclick = function(){
 	sessionStorage.removeItem('myname');
 	localStorage.removeItem('id');
 	localStorage.removeItem('password');
-	location.href = "./";
-	
-//	GoLink(3);
+	GoLink(3);
 }
 // notificationBtn.onclick = function(){
 // 	alert("未実装です♡");
@@ -31,7 +29,7 @@ function GoLink(num){
 	}else if(num == 2){
 		href = "./trade.html";
 	}else if(num == 3){
-		href = "./not_found.html";
+		href = "./login.html";
 	}else if(num == 4){
 		href = "./not_found.html";
 	}else{
