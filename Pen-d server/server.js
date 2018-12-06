@@ -17,6 +17,7 @@ let BlanceCheck = require('./controllers/BlanceCheck');
 let UserSearch = require('./controllers/UserSearch');
 let Trading = require('./controllers/Trading');
 let Login = require('./controllers/Login');
+let Admin = require('./controllers/Admin');
 
 var server = http.createServer();
 server.on('request',doRequest);
@@ -86,6 +87,17 @@ function CheckEndPoint(req, res){
 
     case '/Login':
       Login.process(req, res, UrlData.query);
+      break;
+
+    case '/AdminLog':
+      Admin.process(req, res, UrlData.query);
+      break;
+
+    case '/AdminList':
+      Admin.userlist(req, res, UrlData.query);
+      break;
+    case '/AdminTrading':
+      Admin.trading(req, res, UrlData.query);
       break;
   }
 }
