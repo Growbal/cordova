@@ -68,7 +68,7 @@ body {
   font-style: italic;
 }
 
-#search, #setting {
+#search, #logout {
   vertical-align: top;
   display: inline-block;
   max-width: 20%;
@@ -89,7 +89,7 @@ body {
 
 /* 設定は一旦見えなくして置く */
 
-#setting img {
+#logout img {
   max-height: 60%;
 }
 
