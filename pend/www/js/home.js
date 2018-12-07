@@ -9,13 +9,23 @@ sendCoinBtn.onclick = function(){
 	GoLink(1);
 }
 
-// logoutボタンの処理
 logoutBtn.onclick = function(){
 	sessionStorage.removeItem('myname');
 	localStorage.removeItem('id');
 	localStorage.removeItem('password');
 	GoLink(3);
 }
+// transactionBtn.onclick = function(){
+// 	GoLink(2);
+// }
+// settingBtn.onclick = function(){
+// 	alert("未実装です♡");
+// //	GoLink(3);
+// }
+// notificationBtn.onclick = function(){
+// 	alert("未実装です♡");
+// //	GoLink(4);
+// }
 
 // 数字に対応したページへ移動する関数
 function GoLink(num){
